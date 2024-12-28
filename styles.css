@@ -1,0 +1,314 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: url('hotel.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.hero-cta {
+    background: #FFD700;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.hero-cta:hover {
+    background: #FFA500;
+    color: white;
+}
+/* Navigation Bar Styles */
+/* Navigation Bar Styles */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    padding: 10px 20px;
+    width: 100%; /* Ensure navbar spans the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1em;
+    display: inline-block; /* Ensure links are block-level */
+}
+
+nav a:hover {
+    color: #FFD700;
+}
+
+nav .cta {
+    background: #FFD700;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav .cta:hover {
+    background: #FFA500;
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navbar items vertically on small screens */
+        align-items: stretch; /* Ensure the items stretch across the screen */
+        display: none; /* Initially hide the navbar items */
+    }
+
+    nav a {
+        padding: 15px; /* Increase padding for better touch accessibility */
+        text-align: center; /* Center-align the links */
+        width: 100%; /* Make the links take up full width */
+    }
+
+    nav .cta {
+        width: 100%; /* Ensure the call-to-action button spans the full width */
+        padding: 15px; /* Make the button taller */
+    }
+
+    /* Show the menu icon on small screens */
+    .menu-icon {
+        display: block;
+        color: white;
+    }
+}
+/* Style for the Call Us button in About Us section */
+.call-us-button {
+    display: inline-block;
+    background: #FFD700;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.call-us-button:hover {
+    background: #FFA500;
+    color: white;
+}
+
+/* Navigation Call Us button (CTA style reused) */
+nav a.cta {
+    background: #FFD700;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav a.cta:hover {
+    background: #FFA500;
+}
+
+/* Toggle menu visibility on mobile */
+@media screen and (max-width: 768px) {
+    nav.open {
+        display: flex; /* Show navbar when menu icon is clicked */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav a {
+        font-size: 1.2em; /* Slightly increase font size for better readability on smaller screens */
+    }
+
+    nav .cta {
+        font-size: 1.2em; /* Increase button text size on small screens */
+    }
+}
+
+
+
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.services .card {
+    flex: 1 1 30%; /* Default: 3 cards per row */
+    min-width: 250px;
+    max-width: 500px;
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.services .card:hover {
+    transform: translateY(-10px);
+}
+
+/* Gallery Section */
+/* General styles for the gallery */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%; /* Ensure gallery container does not exceed screen width */
+}
+
+.landscape-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+    width: 100%;
+}
+
+.landscape {
+    width: 45%; /* Two landscape images per row */
+    height: auto;
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 8px;
+    transition: transform 0.3s;
+    max-width: 100%; /* Ensure images do not exceed their container */
+    margin-bottom: 15px;
+}
+
+.landscape:hover {
+    transform: scale(1.05);
+}
+
+/* Portrait Image Styling */
+.portrait {
+    width: 45%; /* Portrait images alongside landscape images */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gallery img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .landscape {
+        width: 45%; /* Two landscape images per row on smaller screens */
+    }
+
+    .portrait {
+        width: 45%; /* Portrait image in the second row */
+    }
+
+    .services .card {
+        flex: 1 1 45%; /* Two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .landscape {
+        width: 100%; /* Single column for small screens */
+    }
+
+    .portrait {
+        width: 100%; /* Portrait also spans full width on small screens */
+    }
+
+    .services .card {
+        flex: 1 1 100%; /* Full-width cards on very small screens */
+    }
+
+    header h1 {
+        font-size: 2em; /* Adjust header font size for small screens */
+    }
+
+    header p {
+        font-size: 1.2em; /* Adjust paragraph font size for small screens */
+    }
+
+    .hero-cta {
+        font-size: 1em; /* Adjust CTA button size */
+    }
+}
+
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto 20px;
+}
+
+.contact input, .contact textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact button {
+    padding: 10px;
+    background: #FFD700;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background: #FFA500;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
